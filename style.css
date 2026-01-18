@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .reveal.delay-100 {
+        transition-delay: 0.1s;
+    }
+
+    .reveal.delay-200 {
+        transition-delay: 0.2s;
+    }
+
+    .reveal.delay-300 {
+        transition-delay: 0.3s;
+    }
+}
+
+/* Global Swiper Overrides - Ensuring Equal Heights */
+.swiper-wrapper {
+    align-items: stretch !important;
+}
+
+.swiper-slide {
+    height: auto !important;
+    display: flex !important;
+}
+
+.swiper-slide>div {
+    height: 100% !important;
+    width: 100% !important;
+}
